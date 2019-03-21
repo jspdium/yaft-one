@@ -3,11 +3,7 @@ import os
 from flask import Flask
 
 fibapp = Flask(__name__)
-
-class Config(object):
-    DEBUG = True
-    TESTING = False
-fibapp.config.from_object('app.Config')
+fibapp.config.from_object(os.environ['APP_CONFIG'])
 
 print('DEBUG:', fibapp.config['DEBUG'])
 print('TESTING:', fibapp.config['TESTING'])
@@ -21,7 +17,6 @@ def index():
 @fibapp.route('/fib/<int:x>')
 def fib(x):
     return str(calcfib(x))
-
 def calcfib(n):
     if n == 0:
         return 0
