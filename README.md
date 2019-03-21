@@ -7,6 +7,7 @@ This is the source code for [Part 1](https://medium.com/@jorge.sousapinto/yet-an
 Create a Python3 virtual environment and install Flask in it:
 
 ```
+$ cd yaft-one
 $ python3 -m venv venv
 $ source venv/bin/activate
 $ pip install flask
